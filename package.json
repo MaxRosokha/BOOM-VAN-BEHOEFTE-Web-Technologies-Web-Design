@@ -1,0 +1,11 @@
+{
+  "name": "boom-van-behoefte-web-technologies-web-design",
+  "version": "0.0.0",
+  "description": "clothing store",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max Rosokha",
+  "license": "ISC"
+}
