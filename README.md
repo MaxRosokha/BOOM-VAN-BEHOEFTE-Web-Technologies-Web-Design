@@ -1,1 +1,1 @@
-https://github.com/hellstar77/BOOM-VAN-BEHOEFTE-Web-Technologies-Web-Design/blob/main/Frame%2015.jpg
+![Иллюстрация к проекту](https://github.com/hellstar77/Web-Technologies-Web-Design/blob/main/Frame%2015.jpg
