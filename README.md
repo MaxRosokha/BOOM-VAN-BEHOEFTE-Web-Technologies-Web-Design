@@ -1,1 +1,2 @@
-![Иллюстрация к проекту][https://github.com/hellstar77/Web-Technologies-Web-Design/blob/main/Frame%2015.jpg](https://ru.freepik.com/free-photo/forest-landscape_40855681.htm#query=%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8&position=0&from_view=keyword&track=ais_hybrid&uuid=b5b04f2a-5a63-4ee2-915c-bf013dda08ad)
+![Image alt](https://github.com/hellstar77/Web-Technologies-Web-Design/blob/main/Frame%2015.jpg)
+
