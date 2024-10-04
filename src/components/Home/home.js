@@ -28,10 +28,4 @@ const MainContent = () => (
 );
 
 
-const App = () => (
-    <div className="App">
-        <MainContent/>
-    </div>
-);
-
-export default App;
+export default MainContent;
