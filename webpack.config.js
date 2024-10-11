@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -11,17 +10,17 @@ module.exports = (env, argv) => {
     output: {
       filename: 'dnl_periodswebresource.js',
       path: path.resolve(__dirname, 'dist'),
-      clean: true,  // очищує папку dist перед кожною збіркою
+      clean: true,
     },
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/, // Додано підтримку .jsx
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'], // Додано @babel/preset-react
+              presets: ['@babel/preset-env', '@babel/preset-react'],
             },
           },
         },
@@ -31,8 +30,8 @@ module.exports = (env, argv) => {
           use: {
             loader: 'file-loader',
             options: {
-              name: '[name].[hash].[ext]', // Додає хеш для уникнення кешування
-              outputPath: 'images',        // Зберігає картинки в окрему папку
+              name: '[name].[hash].[ext]',
+              outputPath: 'images',
             },
           },
         },
@@ -43,11 +42,11 @@ module.exports = (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx'], // Додано підтримку JSX
+      extensions: ['.js', '.jsx'],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './public/index.html', // Задає шлях до шаблону HTML
+        template: './public/index.html',
       }),
     ],
     devServer: {
@@ -58,7 +57,7 @@ module.exports = (env, argv) => {
       open: true,
     },
     optimization: {
-      minimize: !isDevelopment, // Оптимізація в production режимі
+      minimize: !isDevelopment,
     },
   };
 };
