@@ -6,12 +6,4 @@ const Footer = () => (
     </footer>
 );
 
-const App = () => {
-    return (
-        <div>
-            <Footer />
-        </div>
-    );
-};
-
-export default App;
+export default Footer;
