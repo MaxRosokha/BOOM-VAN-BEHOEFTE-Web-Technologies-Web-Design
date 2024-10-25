@@ -12,7 +12,7 @@ const MainContent = () => (
                     Praesent scelerisque justo vitae neque consectetur aliquam.
                     Sed facilisis nec enim at porta. Suspendisse gravida convallis massa,
                     at interdum dui hendrerit in. Nullam venenatis lorem non massa vehicula,
-                    vitae commodo nisi tempus.                 </p>
+                    vitae commodo nisi tempus.                </p>
                 <button className="btn-primary">More information</button>
             </div>
             <div className="images-wrapper">
