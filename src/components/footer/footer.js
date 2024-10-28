@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../image/Logo1.png"; // Шлях до вашого логотипу
+import logo from "../../image/Logo1.png";
 
 const Footer = () => (
   <footer className="footer">

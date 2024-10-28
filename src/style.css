@@ -64,6 +64,18 @@ nav {
     width: auto;
     flex: 1;
 }
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon-button img {
+    width: 30px;
+    height: 30px;
+}
+
 
 .icons {
     justify-content: flex-end;
@@ -844,6 +856,7 @@ p {
 }
 
 .btn-secondary-container {
+    text-decoration: none;
     display: flex;
     align-items: center;
 }
@@ -853,6 +866,7 @@ p {
     justify-content: space-between;
     align-items: center;
     margin: 20px 50px;
+    text-decoration: none;
 }
 
 .btn-secondary {
@@ -864,19 +878,24 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 10px 50px 20px;
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
     background-color: #666;
     color: white;
+    text-decoration: none;
 }
 
+
 .btn-secondary:hover {
+    text-decoration: none;
     background-color: #666;
     color: white;
 }
 
 .btn-secondary:hover {
+    text-decoration: none;
     background-color: #666;
     color: white;
 }
@@ -897,18 +916,17 @@ p {
 
 .product-gallery {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
     flex: 1;
 }
 
 .product-card {
-    width: 18%;
+    width: 15%;
     text-align: center;
 }
 
 .product-card img {
-    width: 90%;
+    width: 70%;
     height: auto;
     border-radius: 8px;
 }
@@ -1036,6 +1054,16 @@ p {
     font-size: 0.9rem;
     color: #666;
     margin-bottom: 4px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
 }
 
 .product-name-сollections {
@@ -1179,5 +1207,15 @@ p {
 
 .footer-nav a:hover {
     color: #555;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* Збільшення зображення при наведенні */
 }
 
