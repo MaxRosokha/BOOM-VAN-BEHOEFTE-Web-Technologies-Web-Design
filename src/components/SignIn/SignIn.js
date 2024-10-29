@@ -32,7 +32,7 @@ const SignIn = () => {
         <form className="auth-form" onSubmit={handleSubmit}>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className="auth-input" required />
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="auth-input" required />
-          <button type="submit" className="auth-button">Go Shipping →</button>
+          <button type="submit" className="auth-button">Sign In →</button>
         </form>
         <p className="auth-footer">
           <Link to="/signup">I don't have an account</Link>

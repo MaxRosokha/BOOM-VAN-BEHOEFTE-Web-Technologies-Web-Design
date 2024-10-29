@@ -36,7 +36,7 @@ const SignUp = () => {
           <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" className="auth-input" required />
           <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" className="auth-input" required />
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="auth-input" required />
-          <button type="submit" className="auth-button">Go Shipping →</button>
+          <button type="submit" className="auth-button">Sign Up →</button>
         </form>
         <p className="auth-footer">
           <Link to="/signin">I already have an account</Link>

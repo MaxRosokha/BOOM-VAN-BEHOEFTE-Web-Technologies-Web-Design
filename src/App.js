@@ -11,7 +11,6 @@ import FavoritePage from './components/Favorite/favoritePage';
 import Account from './components/Account/Account';
 import Colections from './components/Colections/Colections';
 
-
 const App = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation(); // отримуємо поточний шлях
@@ -22,7 +21,6 @@ const App = () => {
     }, 2000);
   }, []);
 
-  // Умовно рендеримо Header і Footer тільки на головній сторінці
   const isMainPage = location.pathname === '/';
 
   return (
@@ -36,10 +34,8 @@ const App = () => {
             <Route path="/" element={<MainContent />} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/favoritePage" element={<FavoritePage/>} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/" element={<Account />} />
             <Route path="/favoritePage" element={<FavoritePage />} />
+            <Route path="/account" element={<Account />} />
             <Route path="/collections" element={<Colections />} />
           </Routes>
           {isMainPage && <Footer />}
