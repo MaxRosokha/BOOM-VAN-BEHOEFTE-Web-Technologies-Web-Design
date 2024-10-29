@@ -1,21 +1,16 @@
-/* Основний контейнер колекцій */
 .collections-container {
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
-
-/* Основний контент */
 .main-content {
     display: flex;
     padding: 20px;
 }
-
-/* Секція фільтрів */
 .filters {
     flex: 1;
     margin-right: 20px;
-    border-right: 1px solid #ccc; /* Роздільник між фільтрами та товарами */
+    border-right: 1px solid #ccc;
     padding-right: 20px;
 }
 
@@ -26,15 +21,15 @@
 
 .products-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
-    gap: 25px; /* Відстань між картками */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 
 .products-card {
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Додано анімацію для тіні */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #ccc;
     border-radius: 8px;
     text-align: center;

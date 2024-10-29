@@ -1216,6 +1216,6 @@ p {
 }
 
 .product-card:hover img {
-    transform: scale(1.1); /* Збільшення зображення при наведенні */
+    transform: scale(1.1);
 }
 

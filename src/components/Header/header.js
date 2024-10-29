@@ -24,7 +24,7 @@ const Header = () => (
           </div>
           <div className="icons">
               <Link to="/favoritePage">
-                  <button className="icon-button" onClick={() => { /* Додайте функцію для обробки натискання на улюблені */
+                  <button className="icon-button" onClick={() => {
                   }}>
                       <img src={favorite} alt="Favorite icon" />
                   </button>

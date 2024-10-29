@@ -101,7 +101,6 @@ const Collections = () => {
             ))}
           </div>
 
-          {/* Пагінація */}
           <div className="pagination">
             <button
               className="pagination-button"

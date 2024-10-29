@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUser } from '../UserContext/UserContext'; // Імпортуємо контекст
+import { useUser } from '../UserContext/UserContext';
 import logo from '../../image/Logo1.png';
 import '../../Auth.css';
 
 const SignUp = () => {
-  const { setUser } = useUser(); // Використовуємо контекст
+  const { setUser } = useUser();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');

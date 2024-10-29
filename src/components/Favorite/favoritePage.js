@@ -5,16 +5,16 @@ import '../../FavoritePage.css';
 import productImage1 from '../../image/Group 70.png';
 import productImage2 from '../../image/Group 65.png';
 import productImage3 from '../../image/Group 64.png';
-import productImage4 from '../../image/Group 37972.png';
-import productImage5 from '../../image/Group 37973.png';
+/*import productImage4 from '../../image/Group 37972.png';*/
+/*import productImage5 from '../../image/Group 37973.png';*/
 
 const FavoritePage = () => {
   const favoriteItems = [
     { id: 1, name: 'Embroidered Seersucker', price: '$99', image: productImage1 },
     { id: 2, name: 'Basic Slim Fit T-Shirt', price: '$99', image: productImage2 },
     { id: 3, name: 'Blurred Print T-Shirt', price: '$99', image: productImage3 },
-    { id: 4, name: 'Full Sleeve Zipper', price: '$199', image: productImage4 },
-    { id: 5, name: 'Exclusive T-Shirt', price: '$150', image: productImage5 },
+    { id: 4, name: 'Full Sleeve Zipper', price: '$199', image: productImage2 },
+    { id: 5, name: 'Exclusive T-Shirt', price: '$150', image: productImage1 },
   ];
 
   const itemsPerPage = 4;

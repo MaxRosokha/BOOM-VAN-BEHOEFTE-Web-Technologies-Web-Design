@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../Header/header'; // Імпорт основного хедера
+import Header from '../Header/header';
 import '../../Account.css';
 import profileImage from '../../image/Ellipse 3.png';
 import Discount1 from '../../image/Group 39.png';

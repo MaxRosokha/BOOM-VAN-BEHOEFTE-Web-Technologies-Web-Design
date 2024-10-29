@@ -37,11 +37,10 @@ const App = () => {
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/favoritePage" element={<FavoritePage/>} />
-            <Route path="/account" element={<Account />} /> {/* Додаємо маршрут для аккаунту */}
+            <Route path="/account" element={<Account />} />
             <Route path="/" element={<Account />} />
             <Route path="/favoritePage" element={<FavoritePage />} />
             <Route path="/collections" element={<Colections />} />
-
           </Routes>
           {isMainPage && <Footer />}
         </>
