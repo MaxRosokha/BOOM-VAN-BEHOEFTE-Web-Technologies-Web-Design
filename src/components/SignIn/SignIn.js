@@ -76,7 +76,7 @@ const SignIn = () => {
           <button type="submit" className="auth-button">Sign In →</button>
         </form>
         <p className="auth-footer">
-          <Link to="/signup">I don't have an account</Link>
+          <Link to="/signup">I don't have an account!</Link>
         </p>
       </div>
     </div>

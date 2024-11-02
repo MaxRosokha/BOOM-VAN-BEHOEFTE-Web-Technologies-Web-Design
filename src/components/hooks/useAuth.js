@@ -1,4 +1,3 @@
-// src/hooks/useAuth.js
 import { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { auth, db } from '/firebaseConfig';
@@ -23,7 +22,7 @@ export const useAuth = () => {
     } catch (error) {
       setError(error.message);
       console.error("Error during sign-in:", error);
-      throw error; // повторно викинути помилку для обробки в компоненті
+      throw error;
     }
   };
 

@@ -1,4 +1,3 @@
-// src/hooks/useFetch.js
 import { useEffect, useState } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
