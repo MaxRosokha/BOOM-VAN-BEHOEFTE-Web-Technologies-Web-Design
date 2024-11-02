@@ -1,33 +1,18 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
-export const useAuth = () => {
-  const [user, setUser] = useState(null);
+const useAuth = () => {
   const navigate = useNavigate();
 
-  const signIn = async (email, password) => {
+  const logOut = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/signin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setUser(data.user);
-        navigate('/account');
-      } else {
-        alert(data.message);
-      }
+      await signOut(auth);
+      navigate('/signin');
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Sign out error:", error.message);
     }
   };
 
-  const signOut = () => {
-    setUser(null);
-    navigate('/signin');
-  };
-
-  return { user, signIn, signOut };
+  return { logOut };
 };

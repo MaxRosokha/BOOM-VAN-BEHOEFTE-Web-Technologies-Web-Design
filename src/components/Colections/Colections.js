@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../Colections.css';
 import Header from '../Header/header';
-import ProductCard from '../ProductCard/ProductsCard';
+import ProductCard from '../ProductCard/ProductsCard.js';
 
 const Collections = () => {
   const [selectedCollection, setSelectedCollection] = useState('Men');
@@ -54,7 +54,7 @@ const Collections = () => {
           <div className="filter-section">
             <h3>Size</h3>
             <div className="size-options">
-              {['XS'].map(size => (
+              {['\ XS \  \ S \  \ M \  \ L \  \ XL \ '].map(size => (
                 <span key={size} className="size-option">{size}</span>
               ))}
             </div>

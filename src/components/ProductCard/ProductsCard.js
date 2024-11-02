@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import '../ProductCard/ProductСard.css';
 import product1 from '../../image/Group 66.png';
 import product2 from '../../image/Group 67.png';
 import product3 from '../../image/Group 68.png';
@@ -23,10 +25,12 @@ const ProductsCard = ({ title, price, image }) => {
   };
 
   return (
-    <div className="products-card">
-      <img src={images[image]} alt={title} />
-      <p>{title}</p>
-      <p>{price}</p>
+    <div className="product-card">
+      <Link to={`/product/${title}`}>
+        <img src={images[image]} alt={title} />
+        <p>{title}</p>
+        <p>{price}</p>
+      </Link>
     </div>
   );
 };

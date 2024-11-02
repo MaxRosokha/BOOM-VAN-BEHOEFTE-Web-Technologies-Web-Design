@@ -1,22 +1,10 @@
 import React, { useState } from 'react';
+import { useFavoriteContext } from './FavoriteContext';
 import Header from '../Header/header';
 import '../../FavoritePage.css';
 
-import productImage1 from '../../image/Group 70.png';
-import productImage2 from '../../image/Group 65.png';
-import productImage3 from '../../image/Group 64.png';
-/*import productImage4 from '../../image/Group 37972.png';*/
-/*import productImage5 from '../../image/Group 37973.png';*/
-
 const FavoritePage = () => {
-  const favoriteItems = [
-    { id: 1, name: 'Embroidered Seersucker', price: '$99', image: productImage1 },
-    { id: 2, name: 'Basic Slim Fit T-Shirt', price: '$99', image: productImage2 },
-    { id: 3, name: 'Blurred Print T-Shirt', price: '$99', image: productImage3 },
-    { id: 4, name: 'Full Sleeve Zipper', price: '$199', image: productImage2 },
-    { id: 5, name: 'Exclusive T-Shirt', price: '$150', image: productImage1 },
-  ];
-
+  const { favoriteItems, removeFavoriteItem } = useFavoriteContext(); // Імпортуємо функцію видалення
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -25,44 +13,50 @@ const FavoritePage = () => {
   const currentItems = favoriteItems.slice(indexOfFirstItem, indexOfLastItem);
 
   const handleNextPage = () => {
-    setCurrentPage(prevPage => prevPage + 1);
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
   const handlePrevPage = () => {
-    setCurrentPage(prevPage => prevPage - 1);
+    setCurrentPage((prevPage) => prevPage - 1);
   };
-
 
   return (
     <div className="favorite-container">
       <Header />
       <h1 className="favorite-title">Favorite Items</h1>
-      <div className="favorite-grid">
-        {currentItems.map(item => (
-          <div key={item.id} className="favorite-item">
-            <img src={item.image} alt={item.name} className="favorite-item-image" />
-            <p className="favorite-item-name">{item.name}</p>
-            <p className="favorite-item-price">{item.price}</p>
+      {favoriteItems.length === 0 ? ( // Перевірка наявності товарів
+        <h10 className="no-favorites">You have no favorite items yet.</h10>
+      ) : (
+        <>
+          <div className="favorite-grid">
+            {currentItems.map((item) => (
+              <div key={item.title + item.selectedColor + item.selectedSize} className="favorite-item">
+                <img src={item.image} alt={item.title} className="favorite-item-image" />
+                <p className="favorite-item-name">{item.title}</p>
+                <p className="favorite-item-price">{item.price}</p>
+                <p className="favorite-item-color">Color: {item.selectedColor}</p>
+                <p className="favorite-item-size">Size: {item.selectedSize}</p>
+                <p className="favorite-item-quantity">Quantity: {item.quantity || 1}</p> {/* Відображаємо кількість */}
+                <button
+                  className="remove-button"
+                  onClick={() => removeFavoriteItem(item)} // Видалити товар
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div className="pagination">
-        <button
-          className="pagination-button"
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-        >
-          Попередня
-        </button>
-        <button
-          className="pagination-button"
-          onClick={handleNextPage}
-          disabled={currentPage >= Math.ceil(favoriteItems.length / itemsPerPage)}
-        >
-          Наступна
-        </button>
-      </div>
+          <div className="pagination">
+            <button className="pagination-button" onClick={handlePrevPage} disabled={currentPage === 1}>
+              Previous
+            </button>
+            <button className="pagination-button" onClick={handleNextPage} disabled={currentPage >= Math.ceil(favoriteItems.length / itemsPerPage)}>
+              Next
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

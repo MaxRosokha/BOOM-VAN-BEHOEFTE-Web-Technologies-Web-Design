@@ -13,11 +13,21 @@ import productImage7 from '../../image/Group 64.png';
 import productImage8 from '../../image/Group 37972.png';
 import productImage9 from '../../image/Group 37973.png';
 import { Link } from 'react-router-dom';
+import ImageModal from '../Home/ImageModal';
 
 const MainContent = () => {
-    const [selectedCollection, setSelectedCollection] = useState('Men'); // Перемістіть сюди
+    const [selectedCollection, setSelectedCollection] = useState('Men');
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState('');
 
+    const handleImageClick = (imageSrc) => {
+        setSelectedImage(imageSrc);
+        setModalOpen(true);
+    };
 
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
       <main>
@@ -63,39 +73,42 @@ const MainContent = () => {
           </section>
 
           <section className="new-section" id="new">
-              <h2 className="new-title"><span className="highlight">NEW</span> <br /> THIS WEEK</h2>
+              <h2 className="new-title">
+                  <span className="highlight">NEW</span> <br /> THIS WEEK
+              </h2>
               <div className="product-gallery">
-                  <div className="product-card">
+                  <div className="product-card" onClick={() => handleImageClick(productImage1)}>
                       <img src={productImage1} alt="Product 1" />
                       <p className="product-type">V-Neck T-Shirt</p>
                       <p className="product-name">Embroidered Seersucker Shirt</p>
                       <p className="product-price">$99</p>
                   </div>
-                  <div className="product-card">
+                  <div className="product-card" onClick={() => handleImageClick(productImage2)}>
                       <img src={productImage2} alt="Product 2" />
                       <p className="product-type">Cotton T-Shirt</p>
                       <p className="product-name">Basic Slim Fit T-Shirt</p>
                       <p className="product-price">$99</p>
                   </div>
-                  <div className="product-card">
+                  <div className="product-card" onClick={() => handleImageClick(productImage3)}>
                       <img src={productImage3} alt="Product 3" />
                       <p className="product-type">Henley T-Shirt</p>
                       <p className="product-name">Blurred Print T-Shirt</p>
                       <p className="product-price">$99</p>
                   </div>
-                  <div className="product-card">
-                      <img src={productImage4} alt="Product 3" />
+                  <div className="product-card" onClick={() => handleImageClick(productImage4)}>
+                      <img src={productImage4} alt="Product 4" />
                       <p className="product-type">Henley T-Shirt</p>
                       <p className="product-name">Blurred Print T-Shirt</p>
                       <p className="product-price">$99</p>
                   </div>
-                  <div className="product-card">
-                      <img src={productImage5} alt="Product 3" />
+                  <div className="product-card" onClick={() => handleImageClick(productImage5)}>
+                      <img src={productImage5} alt="Product 5" />
                       <p className="product-type">Henley T-Shirt</p>
                       <p className="product-name">Blurred Print T-Shirt</p>
                       <p className="product-price">$99</p>
                   </div>
               </div>
+              {isModalOpen && <ImageModal isOpen={isModalOpen} onClose={closeModal} imageSrc={selectedImage} />}
           </section>
 
           <section className="spring-collection-section">
@@ -132,9 +145,11 @@ const MainContent = () => {
                     </>
                   )}
               </div>
-              <button className="see-more">See More</button>
-          </section>
 
+              <Link to="/collections" className="see-more">
+                  See More
+              </Link>
+          </section>
 
           <section id="about-us" className="about-us-section">
               <h2 className="about-us-title">About Us</h2>
@@ -148,7 +163,6 @@ const MainContent = () => {
                   </div>
               </div>
           </section>
-
       </main>
     );
 };

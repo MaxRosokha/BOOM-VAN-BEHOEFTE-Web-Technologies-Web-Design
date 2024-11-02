@@ -106,3 +106,37 @@
     background-color: #ccc;
     cursor: default;
 }
+
+.favorite-item-color,
+.favorite-item-size {
+    font-size: 14px;
+    color: #555;
+}
+
+.remove-button {
+    background-color: #DAA520;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.remove-button:hover {
+    background-color: #DAA556;
+}
+
+.no-favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+

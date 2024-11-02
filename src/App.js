@@ -10,10 +10,15 @@ import SignUp from './components/SignUp/SignUp';
 import FavoritePage from './components/Favorite/favoritePage';
 import Account from './components/Account/Account';
 import Colections from './components/Colections/Colections';
+import { UserProvider } from './components/UserContext/UserContext';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import { FavoriteProvider } from './components/Favorite/FavoriteContext';
+
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const location = useLocation(); // отримуємо поточний шлях
+  const location = useLocation();
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,14 +35,20 @@ const App = () => {
       ) : (
         <>
           {isMainPage && <Header />}
-          <Routes>
-            <Route path="/" element={<MainContent />} />
-            <Route path="/SignIn" element={<SignIn />} />
-            <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/favoritePage" element={<FavoritePage />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/collections" element={<Colections />} />
-          </Routes>
+          <UserProvider>
+            <FavoriteProvider>
+              <Routes>
+                <Route path="/" element={<MainContent />} />
+                <Route path="/SignIn" element={<SignIn />} />
+                <Route path="/SignUp" element={<SignUp />} />
+                <Route path="/favoritePage" element={<FavoritePage />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/collections" element={<Colections />} />
+                <Route path="/product/:title" element={<ProductDetail />} />
+                <Route path="/favorites" element={<FavoritePage />} />
+              </Routes>
+            </FavoriteProvider>
+          </UserProvider>
           {isMainPage && <Footer />}
         </>
       )}

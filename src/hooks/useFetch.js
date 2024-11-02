@@ -1,26 +1,28 @@
 import { useState, useEffect } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "/firebaseConfig";
 
-export const useFetch = (url) => {
-  const [data, setData] = useState(null);
+export const useFetchData = (collectionName) => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5001${url}`);
-        if (!response.ok) throw new Error("Failed to fetch data");
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error.message);
+        const querySnapshot = await getDocs(collection(db, collectionName));
+        const dataList = querySnapshot.docs.map(doc => doc.data());
+        setData(dataList);
+      } catch (err) {
+        setError("Failed to fetch data from Firestore.");
+        console.error("Firestore fetch error:", err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
-  }, [url]);
+  }, [collectionName]);
 
   return { data, loading, error };
 };

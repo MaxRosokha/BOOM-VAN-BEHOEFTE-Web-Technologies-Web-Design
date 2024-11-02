@@ -4,13 +4,13 @@ body {
     padding: 0;
 }
 
-header {
+.header {
     background-color: #f8f8f8;
     padding: 10px 10px;
     border-bottom: 1px solid #e0e0e0;
 }
 
-nav {
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1218,4 +1218,3 @@ p {
 .product-card:hover img {
     transform: scale(1.1);
 }
-

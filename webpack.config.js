@@ -36,7 +36,20 @@ module.exports = (env, argv) => {
           },
         },
         {
-          test: /\.css$/,
+          test: /\.module\.css$/, // Use this for CSS Modules
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true, // Enable CSS Modules
+              },
+            },
+          ],
+        },
+        {
+          test: /\.css$/, // Use this for regular CSS
+          exclude: /\.module\.css$/, // Exclude CSS Modules
           use: ['style-loader', 'css-loader'],
         },
       ],
