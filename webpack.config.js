@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-module.exports = (env, argv) => {
+module.exports = (env, argv = {}) => {
   const isDevelopment = argv.mode === 'development';
 
   return {
@@ -36,20 +36,20 @@ module.exports = (env, argv) => {
           },
         },
         {
-          test: /\.module\.css$/, // Use this for CSS Modules
+          test: /\.module\.css$/,
           use: [
             'style-loader',
             {
               loader: 'css-loader',
               options: {
-                modules: true, // Enable CSS Modules
+                modules: true,
               },
             },
           ],
         },
         {
-          test: /\.css$/, // Use this for regular CSS
-          exclude: /\.module\.css$/, // Exclude CSS Modules
+          test: /\.css$/,
+          exclude: /\.module\.css$/,
           use: ['style-loader', 'css-loader'],
         },
       ],
