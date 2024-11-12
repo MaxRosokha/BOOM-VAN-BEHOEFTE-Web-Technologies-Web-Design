@@ -7,9 +7,8 @@ import { ComponentPreviews, useInitial } from './src/dev';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <DevSupport ComponentPreviews={ComponentPreviews}
-              useInitialHook={useInitial}
-  >
+  <DevSupport
+    ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
     <App />
   </DevSupport>,
 );

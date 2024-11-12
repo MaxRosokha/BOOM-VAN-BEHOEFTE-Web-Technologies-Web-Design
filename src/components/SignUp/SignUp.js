@@ -6,7 +6,7 @@ import { useUser } from "../UserContext/UserContext";
 import logo from '../../image/Logo1.png';
 import '../../Auth.css';
 import { setDoc, doc } from 'firebase/firestore';
-import { useAuth } from '../hooks/useAuth'; // Імпорт setDoc та doc
+import { useAuth } from '../hooks/useAuth';
 
 const SignUp = () => {
   const { setUser } = useUser();
@@ -95,7 +95,7 @@ const SignUp = () => {
           <button type="submit" className="auth-button">Sign Up →</button>
         </form>
         <p className="auth-footer">
-          <Link to="/signin">I already have an account</Link>
+          <Link to="/signin">I already have an account!</Link>
         </p>
       </div>
     </div>

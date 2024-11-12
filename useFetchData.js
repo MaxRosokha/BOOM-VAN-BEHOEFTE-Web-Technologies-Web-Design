@@ -45,5 +45,5 @@ export const useFetchData = (collectionName) => {
     };
   }, [collectionName]);
 
-  return { data, loading, error };
+  return { data, loading, error, };
 };
